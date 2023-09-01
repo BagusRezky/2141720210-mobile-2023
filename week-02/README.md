@@ -1,7 +1,4 @@
-# Bagus Rezky Adhyaksa
-# 2141720210
-# TI-3H / 07
-
-# Membuat proyek dart kedua tentang **Variabel Dan Tipe Data**
+# Variabel Dan Tipe Data
+Membuat proyek dart kedua tentang **Variabel Dan Tipe Data**
 
 ![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-01/docs/Screenshot%20(58).png)
