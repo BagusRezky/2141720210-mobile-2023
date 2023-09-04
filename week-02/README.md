@@ -2,6 +2,7 @@
 
 ## Soal 1
 ### Modifikasilah kode pada baris 3 di Vs Code atau Editor Code Favorit Anda berikut ini agar mendapatkan keluaran (Output) sesuai yang diminta
+![alt text] ()
 ## Soal 2
 ### Mengapa sangat penting untuk memahami bahasa pemograman Dart sebelum kita menggunakan framework Flutter ? Jelaskan!
 Karena bahasa Dart merupakan bahasa dasar yang digunakan dalam flutter. Kita wajib mengetahui terlebih dahulu dasar dart seperti struktur, Variables, Operators, Coments, OOP dalam dart. Hal dasar tersebut akan berguna dana akan sangat membantu jika kita akan mengerjakan suatu project yang menggunakan Flutter 
