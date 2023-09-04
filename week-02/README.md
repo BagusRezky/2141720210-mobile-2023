@@ -73,4 +73,4 @@ Operator logika di Dart adalah operator yang diterapkan pada operan bool; bisa b
 (||) menerapkan operasi logika OR antara dua ekspresi.
 (&&) menerapkan operasi logika AND antara dua ekspresi.
 ## Soal 4
-[](https://github.com/alizul01/2141720088-mobile-2023/blob/master/week-02/TASKS-4.md)
+Untuk Pengerjaan kelompok bisa dilihat [Di Sini](https://github.com/alizul01/2141720088-mobile-2023/blob/master/week-02/TASKS-4.md)
