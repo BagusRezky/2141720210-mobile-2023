@@ -44,14 +44,14 @@ Beberapa operator memiliki perilaku yang berbeda tergantung pada jenis operan di
 
 Dart juga menyediakan shortcut operator untuk menggabungkan variabel setelah operasi lainnya. Operator aritmatika atau shortcut operator adalah +=, -=, *=, /=, dan ~/=.
 
-Increment and decrement operators
+## Increment and decrement operators
 Operator penambahan dan pengurangan juga merupakan operator umum dan diimplementasikan pada angka, sebagai berikut:
 
 ++var atau var++ untuk menambah nilai variabel var sebesar 1
 --var atau var-- untuk mengurangi nilai variabel var sebesar 1
 Operator Dart increment dan decrement berperilaku mirip dengan bahasa lain. Penerapan operator increment dan decrement sangat baik untuk operasi perhitungan pada perulangan.
 
-Equality and relational operators
+## Equality and relational operators
 Persamaan operator Dart dijelaskan sebagai berikut:
 
 (==) untuk memeriksa apakah operan sama
@@ -66,7 +66,7 @@ Di Dart, tidak seperti Java dan bahasa lainnya, operator == tidak membandingkan 
 
 Juga, tidak seperti JavaScript, tidak ada operator === yang diperlukan pada Dart karena telah memiliki fitur type safety yang memastikan bahwa operator persamaan == hanya digunakan pada objek dengan tipe yang sama.
 
-Logical operators
+## Logical operators
 Operator logika di Dart adalah operator yang diterapkan pada operan bool; bisa berupa variabel, ekspresi, atau kondisi. Selain itu, dapat dikombinasikan dengan ekspresi kompleks dengan menggabungkan nilai ekspresi yang dievaluasi. Operator logika yang disediakan adalah sebagai berikut:
 
 (!)  expression negasi atau kebalikan hasil ekspresi—yaitu, true menjadi false dan false menjadi true.
