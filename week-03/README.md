@@ -10,6 +10,7 @@ Tambahkan kode program berikut
 ![alt text]
 Apa yang terjadi? Jika terjadi eror, silahkan perbaiki namun tetap menggunakan if/else.
 kode tersebut akan eror
+![alt text] 
 
 # Praktikum 2 Menerapkan perulangan "while" dan "do-while"
 ### Langkah 1
@@ -37,3 +38,6 @@ Jawaban: Hal tersebut error dikarenakan salah penulisan serta tidak ada untuk be
 Tambahkan kode program berikut di dalam for-loop, lalu coba eksekusi (Run) kode Anda.
 ![alt text]
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue.
+
+untuk perbaiki program 
+![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Praktikum%203%20soal%203.PNG)
