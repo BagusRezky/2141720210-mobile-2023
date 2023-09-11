@@ -24,7 +24,7 @@ Jawaban : Langkah tersebut erro karena tidak ada yang mendeklarasikan dari "coun
 Tambahkan kode program berikut, lalu coba eksekusi (Run) kode Anda.
 ![alt text]
 Apa yang terjadi? jika terjadi error, silahkan perbaiki namun tetap menggunakan do-while
-
+![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Praktikum%202%20soal%203%20jawaban.PNG)
 # Praktikum 3 Menerapkan perulangan "for" dan "break-continue"
 ### Langkah 1
 Ketik atau salin kode program berikut ke dalam fungsi main().
