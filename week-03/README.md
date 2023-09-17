@@ -38,3 +38,8 @@ Jawaban: Hal tersebut error dikarenakan salah penulisan serta tidak ada untuk be
 Apa yang terjadi ? Jika terjadi error, silakan perbaiki namun tetap menggunakan for dan break-continue.
 untuk perbaiki program 
 ![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Praktikum%203%20soal%203.PNG)
+
+# Tugas nomer 2
+---
+Pada tugas nomer 2 ini, kita akan membuat sebuah program yang akan menampilkan bilangan prima dari 0 sampai 201 dan apabila bilangan tersebut merupakan bilangan prima maka akan menampilkan angka tersebut dan juga nama dan NIM, berikut kode program dan outputnya :
+![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Tugas.PNG)
