@@ -42,4 +42,4 @@ untuk perbaiki program
 # Tugas nomer 2
 ---
 Pada tugas nomer 2 ini, kita akan membuat sebuah program yang akan menampilkan bilangan prima dari 0 sampai 201 dan apabila bilangan tersebut merupakan bilangan prima maka akan menampilkan angka tersebut dan juga nama dan NIM, berikut kode program dan outputnya :
-![alt text](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Tugas.PNG)
+![image](https://github.com/BagusRezky/2141720210-mobile-2023/blob/main/week-03/docs/Tugas.PNG)
