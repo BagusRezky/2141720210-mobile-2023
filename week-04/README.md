@@ -2,13 +2,38 @@
 
 ### Langkah 1
 
-![image]()
+```dart
+var list = [1,2,3];
+assert(list.length == 3);
+assert(list[1] == 2);
+print(list.length);
+print(list[1]);
+
+list[1] = 1;
+assert(list[1] == 1);
+print(list[1]);
+```
+
+Output
+
+![image](/week-04/docs/1%20-2%20p1.PNG)
 
 ### Langkah 2
 
 ### Langkah 3
 
-![image]()
+Code :
+
+```dart
+  final List<String?> list_nim  = List.filled(5, null);
+  list_nim[1] = 'Nama: Bagus Rezky, NIM: 2141720210';
+  list_nim[2] = 'Nama: Andi Dwi Prastyo, NIM: 2141720046';
+  print(list_nim);
+```
+
+Output :
+
+![image](/week-04/docs/JAwaban%20prak%201.PNG)
 
 ## Praktikum 2 - Tipe Data Set
 
