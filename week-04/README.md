@@ -169,7 +169,31 @@ void printName(String name) {
 print('Nama: $name');
 }
 ```
-2. 
+2. Parameter Opsional (Optional Parameter):
+Parameter opsional adalah parameter yang tidak harus diberikan nilai saat memanggil fungsi. Dart memiliki dua jenis parameter opsional 
+
+a. parameter opsional sebagai argumen posisi
+```dart
+void greet(String name, [String? greeting]) {
+  if (greeting != null) {
+    print('$greeting, $name!');
+  } else {
+    print('Hello, $name!');
+  }
+}
+```  
+
+b. parameter opsional sebagai argumen nama.
+```dart
+void introduce({String? name, int? age}) {
+  if (name != null) {
+    print('Nama: $name');
+  }
+  if (age != null) {
+    print('Usia: $age');
+  }
+}
+```
 ### Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
 
 Jawaban:
@@ -195,6 +219,24 @@ performOperation(add); // Mengirimkan fungsi sebagai argumen
 ```
 
 ### Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+
+Jawaban :
+Fungsi anonim (anonymous functions) adalah fungsi yang tidak memiliki nama dan dapat didefinisikan dan digunakan di tempat yang sama. Ada dua jenis fungsi anonim di Dart: fungsi anonim dengan kata kunci () {} dan fungsi anonim singkat dengan tanda panah () => expression.
+
+Contoh Code anonim dengan kata kunci
+```dart
+var multiply = (int a, int b) {
+  return a * b;
+};
+print(multiply(3, 4));
+```
+
+Contoh Code anonim dengan tanda panah
+```dart
+var multiply = (int a, int b) => a * b;
+print(multiply(3, 4));
+```
+
 ### Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
 
 Jawaban:
