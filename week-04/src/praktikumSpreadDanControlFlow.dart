@@ -17,6 +17,7 @@ void main(){
   var nav = ['Home', 'Furniture', 'Plants', if (true) 'Outlet'];
   print(nav);
 
+  // langkah 5
 var login = 'manager';
   var nav2 = [
     'Home',
@@ -25,6 +26,8 @@ var login = 'manager';
     if (login case 'manager') 'Inventory'
   ];
   print('nav2: $nav2');
+
+  // langkah 6
 
   var listOfInts = [1, 2, 3];
   var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];

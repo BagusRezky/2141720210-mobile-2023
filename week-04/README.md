@@ -16,11 +16,11 @@ assert(list[1] == 1);
 print(list[1]);
 ```
 
+### Langkah 2
+
 Output
 
 ![image](/week-04/docs/1%20-2%20p1.PNG)
-
-### Langkah 2
 
 ### Langkah 3
 
@@ -47,11 +47,12 @@ Code:
  var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
   print(halogens);
 ```
+
+### Langkah 2
+
 Output:
 
 ![image](/week-04/docs/1%20p2.PNG)
-
-### Langkah 2
 
 ### Langkah 3
 
@@ -100,9 +101,13 @@ var gifts = {
   print(gifts);
   print(nobleGases);
 ```
-![image](/week-04/docs/1%20p3.PNG)
+
 
 ### Langkah 2
+
+Output:
+
+![image](/week-04/docs/1%20p3.PNG)
 
 ### Langkah 3
 
@@ -112,45 +117,145 @@ var gifts = {
 
 ### Langkah 1
 
-![image]()
+Code : 
+
+```dart
+  var list = [1, 2, 3];
+  var list2 = [0, ...list];
+  print(list);
+  print(list2);
+  print(list2.length);
+```
 
 ### Langkah 2
 
+Output:
+
+![image](/week-04/docs/1%20p4.PNG)
+
 ### Langkah 3
 
-![image]()
+Code : 
+
+```dart
+  var list1 = [1, 2, 2141720210];
+  print(list1);
+  var list3 = [0, ...list1];
+  print(list3.length);
+```
+
+Output:
+
+![image](/week-04/docs/3%20p4.PNG)
 
 ### Langkah 4
 
-![image]()
+Code:
+```dart
+  var nav = ['Home', 'Furniture', 'Plants', if (true) 'Outlet'];
+  print(nav);
+```
+
+Output:
+
+![image](/week-04/docs/4%20p4.PNG)
 
 ### Langkah 5
 
-![image]()
+Code:
+
+```dart
+var login = 'manager';
+  var nav2 = [
+    'Home',
+    'Furniture',
+    'Plants',
+    if (login case 'manager') 'Inventory'
+  ];
+  print('nav2: $nav2');
+```
+
+Output:
+
+![image](/week-04/docs/5%20p4.PNG)
 
 ### Langkah 6
 
-![image]()
+Code:
+
+```dart
+  var listOfInts = [1, 2, 3];
+  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
+  assert(listOfStrings[1] == '#1');
+  print(listOfStrings);
+```
+
+Output:
+
+![image](/week-04/docs/6%20p4.PNG)
 
 ## Praktikum 5 - Tipe Data Records
 
 ### Langkah 1
 
-![image]()
+Code:
+```dart
+  var record = ('first', a: 2, b: true, 'last');
+  print(record);
+```
 
 ### Langkah 2
 
+Output:
+
+![image](/week-04/docs/1%20p5.PNG)
+
 ### Langkah 3
 
-![image]()
+Code:
+```dart
+(int, int) tukar((int, int) record) {
+  var (a, b) = record;
+  return (b, a);
+}
+
+void main() {
+  var record = (1, 2);
+  print(record);
+  print(tukar(record));
+}
+```
+
+Output:
+
+![image](/week-04/docs/3%20p5.PNG)
 
 ### Langkah 4
 
-![image]()
+Code:
+```dart
+  (String, int) mahasiswa = ('Bagus Rezky Adhyaksa', 2141720210);
+  print(mahasiswa);
+```
+![image](/week-04/docs/4%20p5.PNG)
 
 ### Langkah 5
 
-![image]()
+Code:
+```dart
+void main() {
+  var mahasiswa2 = ('Bagus Rezky Adhyaksa', a: 2141720210, b: true, 'last');
+
+  print(mahasiswa2.$1);
+  print(mahasiswa2.a);
+  print(mahasiswa2.b);
+  print(mahasiswa2.$2);
+}
+```
+
+Output:
+
+![image](/week-04/docs/5%20p5.PNG)
 
 ## Tugas Praktikum
 
