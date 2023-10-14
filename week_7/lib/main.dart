@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:week_7/pages/hal1.dart';
-import 'package:week_7/pages/prak1.dart';
+import 'package:week_7/pages/flexibel_widget.dart';
+import 'package:week_7/pages/row_column.dart';
 
 void main() {
   runApp(const MainApp());
@@ -11,13 +11,13 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Bagus Rezky Adhyaksa - 2141720210',
-      routes: {
-        '/hal1': (context) => const Hal2(),
-      },
-      home: const LayoutNav(),
+      // routes: {
+      //   '/hal1': (context) => const Hal2(),
+      // },
+      home: Fw(),
     );
   }
 }
