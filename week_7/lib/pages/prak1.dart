@@ -95,14 +95,14 @@ class LayoutNav extends StatelessWidget {
       padding: const EdgeInsets.all(32),
       child: const Text(
         'Ranu Kumbolo adalah sebuah danau yang terletak di dalam Taman Nasional Bromo Tengger Semeru, Jawa Timur, Indonesia. Danau ini merupakan bagian dari rute termudah yang berasal dari Ranu Pani menuju puncak Gunung Semeru.',
-        softWrap: true,
-        maxLines: 3,
-        overflow: TextOverflow.ellipsis,
+        // softWrap: true,
+        // maxLines: 3,
+        // overflow: TextOverflow.ellipsis,
       ),
     );
 
     return Scaffold(
-      body: Column(
+      body: ListView(
         children: [
           header(),
           const SizedBox(height: 10),
