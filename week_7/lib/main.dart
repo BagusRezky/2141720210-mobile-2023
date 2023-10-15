@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:week_7/pages/flexibel_widget.dart';
-import 'package:week_7/pages/row_column.dart';
+import 'package:week_7/all_widget.dart';
 
 void main() {
   runApp(const MainApp());
@@ -17,7 +16,7 @@ class MainApp extends StatelessWidget {
       // routes: {
       //   '/hal1': (context) => const Hal2(),
       // },
-      home: Fw(),
+      home: All(),
     );
   }
 }
