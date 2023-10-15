@@ -144,3 +144,155 @@ Output Keseluruhan
 ![](assets/full.jpeg)
 
 # Tugas 2
+
+## Row & Column
+code
+```dart
+Widget atas = const Column(
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
+    );
+
+    Widget bawah = const Row(
+      children: [
+        BlueBox(),
+        BlueBox(),
+        BlueBox(),
+      ],
+    );
+
+    return Scaffold(
+      body: ListView(
+        children: [
+          atas,
+          bawah,
+        ],
+      ),
+    );
+```
+Output
+
+![](assets/Rc.PNG)
+
+## Axis Alignment
+code
+```dart
+
+```
+Output
+
+![](assets/)
+
+## Flexible
+code loose
+```dart
+return const Row(
+      children: [
+        BlueBox(),
+        Flexible(
+          fit: FlexFit.loose,
+          flex: 1,
+          child: BlueBox(),
+        ),
+```
+Output
+
+![](assets/fwlose.PNG)
+
+code tight
+```dart
+Flexible(
+          fit: FlexFit.tight,
+          flex: 1,
+          child: BlueBox(),
+        ),
+```
+Output
+
+![](assets/fwtight.PNG)
+
+## Expanded
+code
+```dart
+Widget build(BuildContext context) {
+    Widget expanded = const Row(
+      children: [
+        BlueBox(),
+        Expanded(
+          child: BlueBox(),
+        ),
+        BlueBox(),
+      ],
+    );
+
+    return Scaffold(
+      body: ListView(
+        children: [
+          expanded,
+        ],
+      ),
+    );
+  }
+```
+Output
+
+![](assets/Expanded.PNG)
+
+## Sized Box
+code
+```dart
+Widget build(BuildContext context) {
+    Widget sizebox = const Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        BlueBox(),
+        SizedBox(
+          width: 400,
+        ),
+        BlueBox(),
+      ],
+    );
+
+    return Scaffold(
+      body: ListView(
+        children: [
+          sizebox,
+        ],
+      ),
+    );
+  }
+```
+Output
+
+![](assets/sz.PNG)
+
+## Spacer
+code
+```dart
+ Widget build(BuildContext context) {
+    Widget spacer = const Row(
+      mainAxisSize: MainAxisSize.max,
+      children: [
+        BlueBox(),
+        Spacer(
+          flex: 1,
+        ),
+        BlueBox(),
+      ],
+    );
+
+    return Scaffold(
+      body: ListView(
+        children: [
+          spacer,
+        ],
+      ),
+    );
+  }
+```
+Output
+
+![](assets/Sp.PNG)
