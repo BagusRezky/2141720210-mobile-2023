@@ -4,13 +4,14 @@ import 'package:week_8/widgets/appbar_widget.dart';
 import 'package:week_8/widgets/itemdetail_widget.dart';
 
 class ItemPage extends StatelessWidget {
-  final Item itemArgs;
-  const ItemPage({Key? key, required this.itemArgs}) : super(key: key);
+  const ItemPage({Key? key});
+
   @override
   Widget build(BuildContext context) {
+    final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
     return Scaffold(
       appBar: const CustomAppBar(),
-      body: ItemDetailWidget(itemArgs: itemArgs),
+      body: ItemDetailWidget(item: itemArgs),
     );
   }
 }
