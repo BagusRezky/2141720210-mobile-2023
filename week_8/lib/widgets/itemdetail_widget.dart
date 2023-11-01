@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:week_8/models/item.dart';
 import 'package:week_8/widgets/hero_widget.dart';
-import 'package:week_8/widgets/theme.dart';
+import 'package:week_8/theme/theme.dart';
 
 class ItemDetailWidget extends StatelessWidget {
   const ItemDetailWidget({super.key, required Item itemArgs});
