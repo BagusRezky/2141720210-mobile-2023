@@ -51,3 +51,4 @@ TextStyle title2TextStyle = GoogleFonts.poppins(
   fontSize: 22,
   fontWeight: FontWeight.w600,
 );
+
