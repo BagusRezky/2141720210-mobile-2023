@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week_8/models/item.dart';
+import 'package:week_8/widgets/hero_widget.dart';
 import 'package:week_8/widgets/theme.dart';
 
 class ItemPage extends StatelessWidget {
@@ -16,14 +17,7 @@ class ItemPage extends StatelessWidget {
         margin: const EdgeInsets.all(15),
         child: Column(
           children: [
-            Hero(
-              tag: itemArgs.name,
-              child: Image.asset(
-                itemArgs.imageUrl,
-                width: 500,
-                height: 500,
-              ),
-            ),
+            HeroImageWidget(itemArgs: itemArgs),
             Container(
               padding: const EdgeInsets.all(16),
               decoration: BoxDecoration(
