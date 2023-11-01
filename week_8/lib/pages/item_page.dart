@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:week_8/models/item.dart';
+import 'package:week_8/widgets/appBar_widget.dart';
 import 'package:week_8/widgets/hero_widget.dart';
 import 'package:week_8/widgets/theme.dart';
 
@@ -9,10 +10,7 @@ class ItemPage extends StatelessWidget {
   Widget build(BuildContext context) {
     final itemArgs = ModalRoute.of(context)!.settings.arguments as Item;
     return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Colors.blue,
-        title: const Text('Item Page'),
-      ),
+      appBar: const CustomAppBar(),
       body: Container(
         margin: const EdgeInsets.all(15),
         child: Column(
