@@ -13,7 +13,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -22,24 +21,28 @@ class _MyAppState extends State<MyApp> {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: Column(
-        crossAxisAlignment: CrossAxisAlignment.stretch,
-        children: [
-          Container(
-            color: Colors.yellowAccent,
-            width: 50,
-            child: const RedTextWidget(
-              text: "You've pushed this button this many times",
-            ),
+      home: Scaffold(
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Container(
+                color: Colors.yellowAccent,
+                width: 50,
+                child: const RedTextWidget(
+                  text: "You've pushed this button this many times",
+                ),
+              ),
+              Container(
+                color: Colors.greenAccent,
+                width: 100,
+                child: const Text(
+                  "You've pushed this button this many times",
+                ),
+              ),
+            ],
           ),
-          Container(
-            color: Colors.greenAccent,
-            width: 100,
-            child: const Text(
-              "You've pushed this button this many times",
-            ),
-          ),
-        ],
+        ),
       ),
     );
   }
