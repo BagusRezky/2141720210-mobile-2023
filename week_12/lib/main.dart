@@ -45,7 +45,18 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
                 child: const Text('Go!'),
                 onPressed: () {
-                  returnFG();
+                  returnError().then((value) {
+                    setState(() {
+                      result = 'success';
+                    });
+                  }).catchError((onError) {
+                    
+                    setState(() {
+                      result = onError.toString();
+                    });
+                  }).whenComplete(() => print('Complete'));
+                  
+                  // returnFG();
                   // getNumber().then((value) {
                   //   setState(() {
                   //     result = value.toString();
@@ -81,30 +92,30 @@ class _FuturePageState extends State<FuturePage> {
   //   return http.get(url);
   // }
 
-  Future<int> returnOneAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 1;
-  }
+  // Future<int> returnOneAsync() async {
+  //   await Future.delayed(const Duration(seconds: 3));
+  //   return 1;
+  // }
 
-  Future<int> returnTwoAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 2;
-  }
+  // Future<int> returnTwoAsync() async {
+  //   await Future.delayed(const Duration(seconds: 3));
+  //   return 2;
+  // }
 
-  Future<int> returnThreeAsync() async {
-    await Future.delayed(const Duration(seconds: 3));
-    return 3;
-  }
+  // Future<int> returnThreeAsync() async {
+  //   await Future.delayed(const Duration(seconds: 3));
+  //   return 3;
+  // }
 
-  Future count() async {
-    int total = 0;
-    total = await returnOneAsync();
-    total += await returnTwoAsync();
-    total += await returnThreeAsync();
-    setState(() {
-      result = total.toString();
-    });
-  }
+  // Future count() async {
+  //   int total = 0;
+  //   total = await returnOneAsync();
+  //   total += await returnTwoAsync();
+  //   total += await returnThreeAsync();
+  //   setState(() {
+  //     result = total.toString();
+  //   });
+  // }
   // late Completer completer;
 
   // Future getNumber() {
@@ -121,20 +132,29 @@ class _FuturePageState extends State<FuturePage> {
   //     completer.completeError({});
   //   }
   // }
-  void returnFG() {
-    FutureGroup<int> futureGroup = FutureGroup<int>();
-    futureGroup.add(returnOneAsync());
-    futureGroup.add(returnTwoAsync());
-    futureGroup.add(returnThreeAsync());
-    futureGroup.close();
-    futureGroup.future.then((List<int> value) {
-      int total = 0;
-      for (var element in value) {
-        total += element;
-      }
-      setState(() {
-        result = total.toString();
-      });
-    });
+  // void returnFG() {
+  //   FutureGroup<int> futureGroup = FutureGroup<int>();
+  //   // final futures = Future.wait<int>([
+  //   //   returnOneAsync(),
+  //   //   returnTwoAsync(),
+  //   //   returnThreeAsync(),
+  //   // ]);
+  //   futureGroup.add(returnOneAsync());
+  //   futureGroup.add(returnTwoAsync());
+  //   futureGroup.add(returnThreeAsync());
+  //   futureGroup.close();
+  //   futureGroup.future.then((List<int> value) {
+  //     int total = 0;
+  //     for (var element in value) {
+  //       total += element;
+  //     }
+  //     setState(() {
+  //       result = total.toString();
+  //     });
+  //   });
+  // }
+  Future returnError() async {
+    await Future.delayed(const Duration(seconds: 3));
+    throw Exception('something terrible happened!');
   }
 }
