@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:async/async.dart';
 import 'package:flutter/material.dart';
+import 'package:week_12/geolocation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity),
-      home: const FuturePage(),
+      home: const LocationScreen(),
     );
   }
 }
@@ -50,12 +51,11 @@ class _FuturePageState extends State<FuturePage> {
                       result = 'success';
                     });
                   }).catchError((onError) {
-                    
                     setState(() {
                       result = onError.toString();
                     });
                   }).whenComplete(() => print('Complete'));
-                  
+
                   // returnFG();
                   // getNumber().then((value) {
                   //   setState(() {
@@ -154,7 +154,14 @@ class _FuturePageState extends State<FuturePage> {
   //   });
   // }
   Future returnError() async {
-    await Future.delayed(const Duration(seconds: 3));
-    throw Exception('something terrible happened!');
+    try {
+      await returnError();
+    } catch (error) {
+      setState(() {
+        result = error.toString();
+      });
+    } finally {
+      print('Finally');
+    }
   }
 }
