@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:async/async.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -44,13 +45,14 @@ class _FuturePageState extends State<FuturePage> {
             ElevatedButton(
                 child: const Text('Go!'),
                 onPressed: () {
-                  getNumber().then((value) {
-                    setState(() {
-                      result = value.toString();
-                    });
-                  }).catchError((e) {
-                    result = 'An error occurred';
-                  });
+                  returnFG();
+                  // getNumber().then((value) {
+                  //   setState(() {
+                  //     result = value.toString();
+                  //   });
+                  // }).catchError((e) {
+                  //   result = 'An error occurred';
+                  // });
                   // count();
                   // setState(() {});
                   // getData().then((value) {
@@ -79,44 +81,60 @@ class _FuturePageState extends State<FuturePage> {
   //   return http.get(url);
   // }
 
-  // Future<int> returnOneAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 1;
-  // }
-
-  // Future<int> returnTwoAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 2;
-  // }
-
-  // Future<int> returnThreeAsync() async {
-  //   await Future.delayed(const Duration(seconds: 3));
-  //   return 3;
-  // }
-
-  // Future count() async {
-  //   int total = 0;
-  //   total = await returnOneAsync();
-  //   total += await returnTwoAsync();
-  //   total += await returnThreeAsync();
-  //   setState(() {
-  //     result = total.toString();
-  //   });
-  // }
-  late Completer completer;
-
-  Future getNumber() {
-    completer = Completer<int>();
-    calculate();
-    return completer.future;
+  Future<int> returnOneAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 1;
   }
 
-  calculate() async {
-    try {
-      await Future.delayed(const Duration(seconds: 5));
-      completer.complete(42);
-    } catch (_) {
-      completer.completeError({});
-    }
+  Future<int> returnTwoAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 2;
+  }
+
+  Future<int> returnThreeAsync() async {
+    await Future.delayed(const Duration(seconds: 3));
+    return 3;
+  }
+
+  Future count() async {
+    int total = 0;
+    total = await returnOneAsync();
+    total += await returnTwoAsync();
+    total += await returnThreeAsync();
+    setState(() {
+      result = total.toString();
+    });
+  }
+  // late Completer completer;
+
+  // Future getNumber() {
+  //   completer = Completer<int>();
+  //   calculate();
+  //   return completer.future;
+  // }
+
+  // calculate() async {
+  //   try {
+  //     await Future.delayed(const Duration(seconds: 5));
+  //     completer.complete(42);
+  //   } catch (_) {
+  //     completer.completeError({});
+  //   }
+  // }
+  void returnFG() {
+    FutureGroup<int> futureGroup = FutureGroup<int>();
+    futureGroup.add(returnOneAsync());
+    futureGroup.add(returnTwoAsync());
+    futureGroup.add(returnThreeAsync());
+    futureGroup.close();
+    futureGroup.future.then((List<int> value) {
+      int total = 0;
+      for (var element in value) {
+        total += element;
+      }
+      setState(() {
+        result = total.toString();
+      });
+    });
   }
 }
