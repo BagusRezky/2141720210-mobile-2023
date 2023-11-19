@@ -42,7 +42,18 @@ class _FuturePageState extends State<FuturePage> {
         child: Column(
           children: [
             const Spacer(),
-            ElevatedButton(onPressed: (){}, child: const Text('Go!')),
+            ElevatedButton(
+                child: const Text('Go!'),
+                onPressed: () {
+                  setState(() {});
+                  getData().then((value) {
+                    result = value.body.toString().substring(0, 450);
+                    setState(() {});
+                  }).catchError(() {
+                    result = 'Error';
+                    setState(() {});
+                  });
+                }),
             const Spacer(),
             Text(result),
             const Spacer(),
@@ -54,5 +65,10 @@ class _FuturePageState extends State<FuturePage> {
     );
   }
 
-  
+  Future<Response> getData() async {
+    const authority = 'www.googleapis.com';
+    const path = '/books/v1/volumes/R4qsDwAAQBAJ';
+    Uri url = Uri.https(authority, path);
+    return http.get(url);
+  }
 }
