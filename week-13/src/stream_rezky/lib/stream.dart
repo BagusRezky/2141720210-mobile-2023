@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:stream_rezky/stream.dart';
+import 'dart:async';
 class ColorStream {
   final List<Color> color = [
     Colors.blueGrey,
@@ -15,5 +16,15 @@ class ColorStream {
     return color[index];
     });
   }
-
 }
+
+class NumberStream{
+  final StreamController<int> controller = StreamController<int>();
+  void addNumberToSink(int newNumber){
+    controller.sink.add(newNumber);
+  }
+  close() {
+    controller.close();
+  }
+}
+
