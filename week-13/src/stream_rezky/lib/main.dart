@@ -38,6 +38,8 @@ class _StreamHomePageState extends State<StreamHomePage> {
   late NumberStream numberStream;
   late StreamTransformer transformer;
   late StreamSubscription subscription;
+  late StreamSubscription subscription2;
+  String values = '';
 
   void stopStream() {
     numberStreamController.close();
@@ -63,7 +65,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
   void initState() {
     numberStream = NumberStream();
     numberStreamController = numberStream.controller;
-    Stream stream = numberStreamController.stream;
+    Stream stream = numberStreamController.stream.asBroadcastStream();
     // transformer = StreamTransformer<int, int>.fromHandlers(
     //   handleData: (value,sink){
     //     sink.add(value*10);
@@ -76,20 +78,26 @@ class _StreamHomePageState extends State<StreamHomePage> {
 
     subscription = stream.listen((event) {
       setState(() {
-        lastNumber = event;
+        values += '$event - ';
       });
-      subscription.onError((error) {
-        setState(() {
-          lastNumber = -1;
-        });
-      });
-      subscription.onDone(() {
-        print('onDone was Called');
-      });
-      super.initState();
-      // colorStream = ColorStream();
-      // changeColor();
     });
+    subscription.onError((error) {
+      setState(() {
+        lastNumber = -1;
+      });
+    });
+
+    subscription2 = stream.listen((event) {
+      setState(() {
+        values += '$event - ';
+      });
+    });
+    subscription.onDone(() {
+      print('onDone was Called');
+    });
+    super.initState();
+    // colorStream = ColorStream();
+    // changeColor();
   }
 
   @override
@@ -102,9 +110,9 @@ class _StreamHomePageState extends State<StreamHomePage> {
   void addRandomNumber() {
     Random random = Random();
     int myNum = random.nextInt(10);
-    if (!numberStreamController.isClosed){
+    if (!numberStreamController.isClosed) {
       numberStream.addNumberToSink(myNum);
-    }else{
+    } else {
       setState(() {
         lastNumber = -1;
       });
@@ -124,7 +132,7 @@ class _StreamHomePageState extends State<StreamHomePage> {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Text(lastNumber.toString()),
+              Text(values),
               ElevatedButton(
                 onPressed: () => addRandomNumber(),
                 child: const Text('New Random Number'),
