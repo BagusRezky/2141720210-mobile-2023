@@ -1,389 +1,218 @@
-## Praktikum 1 - Tipe Data List
+# Praktikum 1: Dart Streams
 
-### Langkah 1
+Selesaikan langkah-langkah praktikum berikut ini menggunakan editor Visual Studio Code (VS Code) atau Android Studio atau code editor lain kesukaan Anda. Jawablah di laporan praktikum Anda (ketik di README.md) pada setiap soal yang ada di beberapa langkah praktikum ini.
 
-Code :
+Perhatian: Diasumsikan Anda telah berhasil melakukan setup environment Flutter SDK, VS Code, Flutter Plugin, dan Android SDK pada pertemuan pertama.
 
+### Langkah 1: Buat Project Baru
+Buatlah sebuah project flutter baru dengan nama stream_nama (beri nama panggilan Anda) di folder week-13/src/ repository GitHub Anda.
+
+### Langkah 2: Buka file main.dart
+
+### Soal 1
+- Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
+- Gantilah warna tema aplikasi sesuai kesukaan Anda.
+- Lakukan commit hasil jawaban Soal 1 dengan pesan "W13: Jawaban Soal 1"
+
+Jawab : 
 ```dart
-var list = [1,2,3];
-assert(list.length == 3);
-assert(list[1] == 2);
-print(list.length);
-print(list[1]);
-
-list[1] = 1;
-assert(list[1] == 1);
-print(list[1]);
-```
-
-### Langkah 2
-
-Output
-
-![image](/week-04/docs/1%20-2%20p1.PNG)
-
-### Langkah 3
-
-Code :
-
-```dart
-  final List<String?> list_nim  = List.filled(5, null);
-  list_nim[1] = 'Nama: Bagus Rezky, NIM: 2141720210';
-  list_nim[2] = 'Nama: Andi Dwi Prastyo, NIM: 2141720046';
-  print(list_nim);
-```
-
-Output :
-
-![image](/week-04/docs/JAwaban%20prak%201.PNG)
-
-## Praktikum 2 - Tipe Data Set
-
-### Langkah 1
-
-Code:
-
-```dart
- var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-  print(halogens);
-```
-
-### Langkah 2
-
-Output:
-
-![image](/week-04/docs/1%20p2.PNG)
-
-### Langkah 3
-
-Code:
-
-```dart
-var halogens = {'fluorine', 'chlorine', 'bromine', 'iodine', 'astatine'};
-  print(halogens);
-
-  var names1 = <String>{};
-  Set<String> names2 = {};
-
-  names1.add('Bagus Rezky Adhyaksa');
-  names1.add('2141720210');
-
-  names2.addAll(['Bagus Rezky Adhyaksa', '2141720210']);
-
-  print(names1);
-  print(names2);
-```
-
-Output:
-
-![image](/week-04/docs/3%20p2.PNG)
-
-## Praktikum 3 - Tipe Data Maps
-
-### Langkah 1
-
-Code :
-
-```dart
-var gifts = {
-    // Key:    Value
-    'first': 'partridge',
-    'second': 'turtledoves',
-    'fifth': '1'
-  };
-
-  var nobleGases = {
-    2: 'helium',
-    10: 'neon',
-    18: 2,
-  };
-
-  print(gifts);
-  print(nobleGases);
-```
-
-
-### Langkah 2
-
-Output:
-
-![image](/week-04/docs/1%20p3.PNG)
-
-### Langkah 3
-
-![image]()
-
-## Praktikum 4 - Tipe Data List: Spread dan Control-flow Operators
-
-### Langkah 1
-
-Code : 
-
-```dart
-  var list = [1, 2, 3];
-  var list2 = [0, ...list];
-  print(list);
-  print(list2);
-  print(list2.length);
-```
-
-### Langkah 2
-
-Output:
-
-![image](/week-04/docs/1%20p4.PNG)
-
-### Langkah 3
-
-Code : 
-
-```dart
-  var list1 = [1, 2, 2141720210];
-  print(list1);
-  var list3 = [0, ...list1];
-  print(list3.length);
-```
-
-Output:
-
-![image](/week-04/docs/3%20p4.PNG)
-
-### Langkah 4
-
-Code:
-```dart
-  var nav = ['Home', 'Furniture', 'Plants', if (true) 'Outlet'];
-  print(nav);
-```
-
-Output:
-
-![image](/week-04/docs/4%20p4.PNG)
-
-### Langkah 5
-
-Code:
-
-```dart
-var login = 'manager';
-  var nav2 = [
-    'Home',
-    'Furniture',
-    'Plants',
-    if (login case 'manager') 'Inventory'
-  ];
-  print('nav2: $nav2');
-```
-
-Output:
-
-![image](/week-04/docs/5%20p4.PNG)
-
-### Langkah 6
-
-Code:
-
-```dart
-  var listOfInts = [1, 2, 3];
-  var listOfStrings = ['#0', for (var i in listOfInts) '#$i'];
-  assert(listOfStrings[1] == '#1');
-  print(listOfStrings);
-```
-
-Output:
-
-![image](/week-04/docs/6%20p4.PNG)
-
-## Praktikum 5 - Tipe Data Records
-
-### Langkah 1
-
-Code:
-```dart
-  var record = ('first', a: 2, b: true, 'last');
-  print(record);
-```
-
-### Langkah 2
-
-Output:
-
-![image](/week-04/docs/1%20p5.PNG)
-
-### Langkah 3
-
-Code:
-```dart
-(int, int) tukar((int, int) record) {
-  var (a, b) = record;
-  return (b, a);
-}
-
-void main() {
-  var record = (1, 2);
-  print(record);
-  print(tukar(record));
-}
-```
-
-Output:
-
-![image](/week-04/docs/3%20p5.PNG)
-
-### Langkah 4
-
-Code:
-```dart
-  (String, int) mahasiswa = ('Bagus Rezky Adhyaksa', 2141720210);
-  print(mahasiswa);
-```
-![image](/week-04/docs/4%20p5.PNG)
-
-### Langkah 5
-
-Code:
-```dart
-void main() {
-  var mahasiswa2 = ('Bagus Rezky Adhyaksa', a: 2141720210, b: true, 'last');
-
-  print(mahasiswa2.$1);
-  print(mahasiswa2.a);
-  print(mahasiswa2.b);
-  print(mahasiswa2.$2);
-}
-```
-
-Output:
-
-![image](/week-04/docs/5%20p5.PNG)
-
-## Tugas Praktikum
-
-### Jelaskan yang dimaksud Functions dalam bahasa Dart!
-
-Jawaban : 
-fungsi (functions) adalah blok kode yang dapat digunakan untuk mengeksekusi tugas tertentu. Fungsi adalah bagian penting dari pemrograman Dart dan digunakan untuk mengorganisasi, merapikan, dan menggabungkan kode.
-
-### Jelaskan jenis-jenis parameter di Functions beserta contoh sintaksnya!
-
-Jawaban :
-1. Parameter Required (Wajib): Parameter ini harus disediakan saat memanggil fungsi. 
-Contoh Code:
-```dart
-void printName(String name) {
-print('Nama: $name');
-}
-```
-2. Parameter Opsional (Optional Parameter):
-Parameter opsional adalah parameter yang tidak harus diberikan nilai saat memanggil fungsi. Dart memiliki dua jenis parameter opsional 
-
-a. parameter opsional sebagai argumen posisi
-```dart
-void greet(String name, [String? greeting]) {
-  if (greeting != null) {
-    print('$greeting, $name!');
-  } else {
-    print('Hello, $name!');
+ Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Stream Rezky',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const StreamHomePage(),
+    );
   }
-}
-```  
+```
 
-b. parameter opsional sebagai argumen nama.
+> ###Soal 2
+>- Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
+>- Lakukan commit hasil jawaban Soal 2 dengan pesan "W13: Jawaban Soal 2"
+
+<img src="image/Screenshot (162).png">
+
+Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W12: Soal 2".
+
+<img src="image/Screenshot%20(160).png">
+
+
+### Soal 3
+- Jelaskan maksud kode langkah 5 tersebut terkait `substring` dan `catchError`!
+
+Jawab : 
+>substring() adalah metode untuk mengambil substring dari string. Substring adalah bagian dari string yang dimulai dari indeks tertentu dan berakhir pada indeks tertentu. Metode substring() menerima dua parameter, yaitu indeks awal dan indeks akhir. Indeks awal adalah indeks karakter pertama yang ingin diambil, dan indeks akhir adalah indeks karakter terakhir yang ingin diambil.
+>catchError() adalah metode untuk menangani kesalahan. Metode catchError() menerima satu parameter, yaitu fungsi yang akan dijalankan jika terjadi kesalahan. Fungsi tersebut akan menerima objek kesalahan sebagai parameter.
+>Kode di atas menggunakan substring() untuk mengambil 450 karakter pertama dari respons API. Jika terjadi kesalahan saat mengambil respons API, maka kode tersebut akan menggunakan catchError() untuk menampilkan pesan kesalahan "An error occurred".
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 3".
+
+<img src="image/s3.gif" width = 197>
+
+
+### Soal 4
+- Jelaskan maksud kode langkah 1 dan 2 tersebut!
+
+>Langkah 1
+>Kode di atas adalah kode Dart yang terdiri dari tiga fungsi asynchronous, yaitu returnOneAsync(), returnTwoAsync(), dan returnThreeAsync(). Ketiga fungsi ini mengembalikan nilai int dan menggunakan Future.delayed() untuk menunda eksekusi selama 3 detik.
+>Berikut adalah penjelasan masing-masing fungsi:
+>- returnOneAsync()
+>Fungsi ini mengembalikan nilai 1 setelah 3 detik.
+>- returnTwoAsync()
+>Fungsi ini mengembalikan nilai 2 setelah 3 detik.
+>- returnThreeAsync()
+>Fungsi ini mengembalikan nilai 3 setelah 3 detik.
+
+>Langkah 2
+>Kode di atas adalah sebuah fungsi asynchronous bernama count() yang digunakan untuk menghitung jumlah dari tiga fungsi asynchronous lainnya, yaitu returnOneAsync(), returnTwoAsync(), dan returnThreeAsync(). Fungsi count() ini mengembalikan Future, yang berarti bahwa eksekusinya tidak akan memblokir kode lainnya.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 4".
+
+<img src="image/2.gif" width = 197>
+
+### Soal 5
+- Jelaskan maksud kode langkah 2 tersebut!
+Jawab : 
+>Pada langkah 2, kita menambahkan variabel completer dan method getNumber() dan calculate() di class _FuturePageState.
+>1. Variabel completer
+>Variabel completer adalah variabel late dari tipe Completer<int>. Variabel ini digunakan untuk menyimpan hasil dari perhitungan angka 42.
+>2. Method getNumber()
+>Method getNumber() mengembalikan nilai dari variabel completer. Method ini memiliki dua langkah:
+>a. Inisialisasi variabel completer dengan nilai baru.
+>b. Memanggil method calculate() untuk menghitung angka 42.
+>3. Method calculate()
+>Method calculate() menggunakan Future.delayed() untuk menunggu 5 detik sebelum menyelesaikan perhitungan angka 42. Setelah 5 detik, method ini akan memanggil method completer.complete() untuk menyelesaikan perhitungan dan mengembalikan nilai 42 ke variabel completer
+
+<br>
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 5".
+
+<img src="image/W12 S5.gif" width = 197>
+
+### Soal 6
+- Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
+
+>Langkah 5
+>Pada langkah 5, kita mengganti isi dari method calculate(). Method calculate() sebelumnya menggunakan await Future.delayed(const Duration(seconds: 5)); untuk menunggu 5 detik sebelum menyelesaikan perhitungan angka 42. Namun, method ini tidak menangani kesalahan yang mungkin terjadi saat menunggu 5 detik.
+>Kode ini menggunakan try/catch untuk menangani kesalahan yang mungkin terjadi saat menunggu 5 detik. Jika tidak terjadi kesalahan, maka method ini akan memanggil method completer.complete() untuk menyelesaikan perhitungan dan mengembalikan nilai 42 ke variabel completer. Jika terjadi kesalahan, maka method ini akan memanggil method completer.completeError() untuk menyelesaikan perhitungan dan mengembalikan nilai {} ke variabel completer.
+
+>Langkah 6
+>Pada langkah 6, kita mengganti kode di method onPressed(). Method onPressed() sebelumnya menggunakan then() untuk menangani hasil dari method getNumber(). Namun, method ini tidak menangani kesalahan yang mungkin terjadi saat memanggil method getNumber().
+>Kode ini menggunakan then() dan catchError() untuk menangani hasil dari method getNumber(). Jika tidak terjadi kesalahan, maka method ini akan memanggil method setState() untuk memperbarui state dari widget. Jika terjadi kesalahan, maka method ini akan memanggil method setState() untuk memperbarui state dari widget dan menampilkan pesan kesalahan.
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 6".
+
+<img src="image/W12 S5.gif" width = 197>
+
+### Soal 7
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7"
+
+<img src="image/2.gif" width = 197>
+
+
+### Soal 8
+- Jelaskan maksud perbedaan kode langkah 1 dan 4!
+Jawab : 
+>Perbedaan kode langkah 1 dan kode langkah 4 adalah pada penggunaan variabel futureGroup. Pada langkah 1, variabel futureGroup digunakan untuk menampung FutureGroup<int>. FutureGroup adalah sebuah objek yang dapat digunakan untuk mengelompokkan beberapa Future bersama-sama. Sedangkan pada langkah 4, variabel futureGroup diganti dengan Future.wait<int>(). Future.wait<int>() adalah sebuah fungsi yang dapat digunakan untuk menunggu beberapa Future selesai dijalankan.
+
+### Soal 9
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".
+
+<img src="image/W12 S9.gif" width = 197>
+
+### Soal 10
+- Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
+
+>Perbedaan kode langkah 1 dan kode langkah 4 adalah pada penanganan error. Pada langkah 1, method returnError() tidak menangani error yang terjadi. Jika error terjadi, maka method tersebut akan berhenti dan tidak mengembalikan nilai apa pun.
+
+>Sedangkan pada langkah 4, method handleError() menangani error yang terjadi dengan menggunakan try-catch-finally. Pada try block, method handleError() mencoba untuk menjalankan method returnError(). Jika error terjadi, maka try block akan berhenti dan error akan ditangkap oleh catch block. Pada catch block, method handleError() akan menampilkan error ke layar menggunakan print(). Finally block akan selalu dijalankan, terlepas dari apakah ada error yang terjadi atau tidak.
+
+### Soal 11
+- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
+Jawab : 
 ```dart
-void introduce({String? name, int? age}) {
-  if (name != null) {
-    print('Nama: $name');
+appBar: AppBar(title: const Text('Current Location Rezky')),
+```
+
+### Soal 12
+- Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+
+Jawab : 
+```dart
+Future<Position> getPosition() async {
+    await Geolocator.requestPermission();
+    await Geolocator.isLocationServiceEnabled();
+    await Future.delayed(const Duration(seconds: 3));
+    Position? position = await Geolocator.getCurrentPosition();
+    return position;
   }
-  if (age != null) {
-    print('Usia: $age');
-  }
-}
 ```
-### Jelaskan maksud Functions sebagai first-class objects beserta contoh sintaknya!
+- Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
 
-Jawaban:
-Konsep functions sebagai first-class objects adalah dapat menyimpan fungsi dalam variabel, mengirimkannya sebagai argumen ke fungsi lain, dan mengembalikannya dari fungsi.
-Contoh Code:
+Jawab :
+>Karena package geolocator juga support di browser, sehingga koordinat GPS juga bisa didapatkan pada browser, beserta izinnya.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 12".
+
+<img src="image/W12 S12.gif" width = 197>
+
+### Soal 13
+- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+
+Jawab : 
+>Kedua praktikum menampilkan koordinat Geolokasi dengan layout yang sama. Hal ini terjadi karena keduanya mengambil lokasi pengguna secara langsung saat aplikasi dimulai.
+
+>Untuk pembaruan UI, pada kasus pertama, setState digunakan untuk memperbarui variabel state myPosition. Pada kasus kedua, FutureBuilder digunakan untuk mengelola pembaruan UI secara otomatis. Namun pada akhirnya, hasil tampilan UI terlihat sama karena keduanya memiliki penundaan yang sama, yakni 3 detik.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 13".
+
+<img src="image/W12 S14.gif" width = 197>
+
+- Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
+
+
+### Soal 14
+- Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
+
+Jawab : 
+> Langkah ini tidak mengubah tampilan UI. Hal ini karena langkah ini hanya menambahkan fungsi handleError() yang akan dijalankan jika terjadi kesalahan. Namun, pada langkah ini tidak ada kesalahan yang terjadi selama pemrosesan data lokasi. Oleh karena itu, pesan kesalahan "Something terrible happened!" tidak akan ditampilkan.
+
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 14".
+
+Jawab : 
+
+<img src="image/W12 S14.gif" width = 197>
+
+### Soal 15
+- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
+
 ```dart
-void sayHello() {
-  print('Hello, world!');
-}
-
-var greetingFunction = sayHello; // Mengganti fungsi ke dalam variabel
-greetingFunction(); // Memanggil fungsi melalui variabel
-
-void performOperation(Function operation) {
-  print(operation(3, 4));
-}
-
-int add(int a, int b) {
-  return a + b;
-}
-
-performOperation(add); // Mengirimkan fungsi sebagai argumen
+appBar: AppBar(
+        title: const Text('Navigation First Screen Rezky'),
+      ),
 ```
 
-### Apa itu Anonymous Functions? Jelaskan dan berikan contohnya!
+- Silakan ganti dengan warna tema favorit Anda.
 
-Jawaban :
-Fungsi anonim (anonymous functions) adalah fungsi yang tidak memiliki nama dan dapat didefinisikan dan digunakan di tempat yang sama. Ada dua jenis fungsi anonim di Dart: fungsi anonim dengan kata kunci () {} dan fungsi anonim singkat dengan tanda panah () => expression.
+### Soal 16
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
 
-Contoh Code anonim dengan kata kunci
-```dart
-var multiply = (int a, int b) {
-  return a * b;
-};
-print(multiply(3, 4));
-```
+Jawab : 
+>Ketika tombol ditekan, warnanya akan berubah sesuai dengan warna yang telah ditetapkan pada widget ElevatedButton() di class navigation_second.dart. Hal ini dikarenakan setiap tombol memiliki fungsi Navigation.pop() yang memiliki parameter berupa context dan warna yang telah ditetapkan. Oleh karena itu, setiap tombol yang ditekan akan menampilkan warna yang berbeda-beda sesuai dengan nilai variabel warna.
 
-Contoh Code anonim dengan tanda panah
-```dart
-var multiply = (int a, int b) => a * b;
-print(multiply(3, 4));
-```
+- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 16".
 
-### Jelaskan perbedaan Lexical scope dan Lexical closures! Berikan contohnya!
+<img src="image/W12 S16.gif" width = 197>
 
-Jawaban:
-Lexical Scope: Lexical scope adalah konsep di mana variabel yang dapat diakses dalam sebuah fungsi ditentukan oleh struktur kode secara statis. Ini berarti variabel yang didefinisikan di luar fungsi dapat diakses dari dalam fungsi.
-Contoh Code:
-```dart
-String message = 'Hello';
 
-void greet() {
-  print(message);
-}
-```
+### Soal 17
+- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
 
-Lexical Closures: Lexical closure adalah konsep di mana sebuah fungsi dapat mengakses variabel di luar cakupan (scope) fungsi tersebut, bahkan setelah fungsi tersebut selesai dieksekusi. Ini terjadi ketika fungsi yang mengakses variabel tersebut disimpan sebagai referensi oleh fungsi lain atau dikembalikan sebagai hasil.
-Contoh Code:
-```dart
-Function makeCounter() {
-  int count = 0;
-  return () {
-    count++;
-    print(count);
-  };
-}
+Jawab : 
+> Ketika Anda menekan tombol "Change Color" dan memilih warna pada dialog, layar akan mengalami perubahan pada warna latar belakang. Ini disebabkan oleh pembaruan nilai warna dalam fungsi _showColorDialog, diikuti dengan pembaruan widget menggunakan setState. Tindakan ini akan memicu pembangunan ulang widget dan mencerminkan perubahan warna yang telah dipilih pada layar.
 
-var counter = makeCounter();
-counter(); 
-counter(); 
-```
-### Jelaskan dengan contoh cara membuat return multiple value di Functions!
+- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
+- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 17".
 
-Jawaban:
-```dart
-Map<String, dynamic> getPersonInfo() {
-  return {
-    'name': 'Rezky',
-    'age': 21,
-    'city': 'Surabaya',
-  };
-}
+<img src="image/W12 S17.gif" width = 197>
 
-var person = getPersonInfo();
-print('Nama: ${person['name']}');
-print('Usia: ${person['age']}');
-print('Kota: ${person['city']}');
-```
