@@ -1,218 +1,155 @@
-# Praktikum 1: Dart Streams
+**Bagus Rezky Adhyaksa**
 
-Selesaikan langkah-langkah praktikum berikut ini menggunakan editor Visual Studio Code (VS Code) atau Android Studio atau code editor lain kesukaan Anda. Jawablah di laporan praktikum Anda (ketik di README.md) pada setiap soal yang ada di beberapa langkah praktikum ini.
+**3H/07**
 
-Perhatian: Diasumsikan Anda telah berhasil melakukan setup environment Flutter SDK, VS Code, Flutter Plugin, dan Android SDK pada pertemuan pertama.
+**2141720210**
 
-### Langkah 1: Buat Project Baru
-Buatlah sebuah project flutter baru dengan nama stream_nama (beri nama panggilan Anda) di folder week-13/src/ repository GitHub Anda.
+---
 
-### Langkah 2: Buka file main.dart
+# **Lanjutan State Management dengan Streams**
 
-### Soal 1
-- Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda.
-- Gantilah warna tema aplikasi sesuai kesukaan Anda.
-- Lakukan commit hasil jawaban Soal 1 dengan pesan "W13: Jawaban Soal 1"
+## **Praktikum 1: Dart Streams**
 
-Jawab : 
-```dart
- Widget build(BuildContext context) {
+**Soal 1:** Tambahkan nama panggilan Anda pada title app sebagai identitas hasil pekerjaan Anda. Gantilah warna tema aplikasi sesuai kesukaan Anda.
+```
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  // This widget is the root of your application.
+  @override
+  Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Stream Rezky',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.indigo
       ),
       home: const StreamHomePage(),
     );
   }
+}
+```
+**Soal 2:** Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
+
+```
+import 'package:flutter/material.dart';
+
+class ColorStream {
+  final List<Color> colors = [
+    Colors.blueGrey,
+    Colors.amber,
+    Colors.deepPurple,
+    Colors.lightBlue,
+    Colors.teal,
+    Colors.black,
+    Colors.lime,
+    Colors.pink,
+    Colors.grey,
+    Colors.brown,
+  ];
+}
 ```
 
-> ###Soal 2
->- Tambahkan 5 warna lainnya sesuai keinginan Anda pada variabel colors tersebut.
->- Lakukan commit hasil jawaban Soal 2 dengan pesan "W13: Jawaban Soal 2"
-
-<img src="image/Screenshot (162).png">
-
-Kemudian cobalah akses di browser URI tersebut dengan lengkap seperti ini. Jika menampilkan data JSON, maka Anda telah berhasil. Lakukan capture milik Anda dan tulis di README pada laporan praktikum. Lalu lakukan commit dengan pesan "W12: Soal 2".
-
-<img src="image/Screenshot%20(160).png">
-
-
-### Soal 3
-- Jelaskan maksud kode langkah 5 tersebut terkait `substring` dan `catchError`!
-
-Jawab : 
->substring() adalah metode untuk mengambil substring dari string. Substring adalah bagian dari string yang dimulai dari indeks tertentu dan berakhir pada indeks tertentu. Metode substring() menerima dua parameter, yaitu indeks awal dan indeks akhir. Indeks awal adalah indeks karakter pertama yang ingin diambil, dan indeks akhir adalah indeks karakter terakhir yang ingin diambil.
->catchError() adalah metode untuk menangani kesalahan. Metode catchError() menerima satu parameter, yaitu fungsi yang akan dijalankan jika terjadi kesalahan. Fungsi tersebut akan menerima objek kesalahan sebagai parameter.
->Kode di atas menggunakan substring() untuk mengambil 450 karakter pertama dari respons API. Jika terjadi kesalahan saat mengambil respons API, maka kode tersebut akan menggunakan catchError() untuk menampilkan pesan kesalahan "An error occurred".
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 3".
-
-<img src="image/s3.gif" width = 197>
-
-
-### Soal 4
-- Jelaskan maksud kode langkah 1 dan 2 tersebut!
-
->Langkah 1
->Kode di atas adalah kode Dart yang terdiri dari tiga fungsi asynchronous, yaitu returnOneAsync(), returnTwoAsync(), dan returnThreeAsync(). Ketiga fungsi ini mengembalikan nilai int dan menggunakan Future.delayed() untuk menunda eksekusi selama 3 detik.
->Berikut adalah penjelasan masing-masing fungsi:
->- returnOneAsync()
->Fungsi ini mengembalikan nilai 1 setelah 3 detik.
->- returnTwoAsync()
->Fungsi ini mengembalikan nilai 2 setelah 3 detik.
->- returnThreeAsync()
->Fungsi ini mengembalikan nilai 3 setelah 3 detik.
-
->Langkah 2
->Kode di atas adalah sebuah fungsi asynchronous bernama count() yang digunakan untuk menghitung jumlah dari tiga fungsi asynchronous lainnya, yaitu returnOneAsync(), returnTwoAsync(), dan returnThreeAsync(). Fungsi count() ini mengembalikan Future, yang berarti bahwa eksekusinya tidak akan memblokir kode lainnya.
-
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 4".
-
-<img src="image/2.gif" width = 197>
-
-### Soal 5
-- Jelaskan maksud kode langkah 2 tersebut!
-Jawab : 
->Pada langkah 2, kita menambahkan variabel completer dan method getNumber() dan calculate() di class _FuturePageState.
->1. Variabel completer
->Variabel completer adalah variabel late dari tipe Completer<int>. Variabel ini digunakan untuk menyimpan hasil dari perhitungan angka 42.
->2. Method getNumber()
->Method getNumber() mengembalikan nilai dari variabel completer. Method ini memiliki dua langkah:
->a. Inisialisasi variabel completer dengan nilai baru.
->b. Memanggil method calculate() untuk menghitung angka 42.
->3. Method calculate()
->Method calculate() menggunakan Future.delayed() untuk menunggu 5 detik sebelum menyelesaikan perhitungan angka 42. Setelah 5 detik, method ini akan memanggil method completer.complete() untuk menyelesaikan perhitungan dan mengembalikan nilai 42 ke variabel completer
-
-<br>
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 5".
-
-<img src="image/W12 S5.gif" width = 197>
-
-### Soal 6
-- Jelaskan maksud perbedaan kode langkah 2 dengan langkah 5-6 tersebut!
-
->Langkah 5
->Pada langkah 5, kita mengganti isi dari method calculate(). Method calculate() sebelumnya menggunakan await Future.delayed(const Duration(seconds: 5)); untuk menunggu 5 detik sebelum menyelesaikan perhitungan angka 42. Namun, method ini tidak menangani kesalahan yang mungkin terjadi saat menunggu 5 detik.
->Kode ini menggunakan try/catch untuk menangani kesalahan yang mungkin terjadi saat menunggu 5 detik. Jika tidak terjadi kesalahan, maka method ini akan memanggil method completer.complete() untuk menyelesaikan perhitungan dan mengembalikan nilai 42 ke variabel completer. Jika terjadi kesalahan, maka method ini akan memanggil method completer.completeError() untuk menyelesaikan perhitungan dan mengembalikan nilai {} ke variabel completer.
-
->Langkah 6
->Pada langkah 6, kita mengganti kode di method onPressed(). Method onPressed() sebelumnya menggunakan then() untuk menangani hasil dari method getNumber(). Namun, method ini tidak menangani kesalahan yang mungkin terjadi saat memanggil method getNumber().
->Kode ini menggunakan then() dan catchError() untuk menangani hasil dari method getNumber(). Jika tidak terjadi kesalahan, maka method ini akan memanggil method setState() untuk memperbarui state dari widget. Jika terjadi kesalahan, maka method ini akan memanggil method setState() untuk memperbarui state dari widget dan menampilkan pesan kesalahan.
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 6".
-
-<img src="image/W12 S5.gif" width = 197>
-
-### Soal 7
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 7"
-
-<img src="image/2.gif" width = 197>
-
-
-### Soal 8
-- Jelaskan maksud perbedaan kode langkah 1 dan 4!
-Jawab : 
->Perbedaan kode langkah 1 dan kode langkah 4 adalah pada penggunaan variabel futureGroup. Pada langkah 1, variabel futureGroup digunakan untuk menampung FutureGroup<int>. FutureGroup adalah sebuah objek yang dapat digunakan untuk mengelompokkan beberapa Future bersama-sama. Sedangkan pada langkah 4, variabel futureGroup diganti dengan Future.wait<int>(). Future.wait<int>() adalah sebuah fungsi yang dapat digunakan untuk menunggu beberapa Future selesai dijalankan.
-
-### Soal 9
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 9".
-
-<img src="image/W12 S9.gif" width = 197>
-
-### Soal 10
-- Panggil method handleError() tersebut di ElevatedButton, lalu run. Apa hasilnya? Jelaskan perbedaan kode langkah 1 dan 4!
-
->Perbedaan kode langkah 1 dan kode langkah 4 adalah pada penanganan error. Pada langkah 1, method returnError() tidak menangani error yang terjadi. Jika error terjadi, maka method tersebut akan berhenti dan tidak mengembalikan nilai apa pun.
-
->Sedangkan pada langkah 4, method handleError() menangani error yang terjadi dengan menggunakan try-catch-finally. Pada try block, method handleError() mencoba untuk menjalankan method returnError(). Jika error terjadi, maka try block akan berhenti dan error akan ditangkap oleh catch block. Pada catch block, method handleError() akan menampilkan error ke layar menggunakan print(). Finally block akan selalu dijalankan, terlepas dari apakah ada error yang terjadi atau tidak.
-
-### Soal 11
-- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
-
-Jawab : 
-```dart
-appBar: AppBar(title: const Text('Current Location Rezky')),
+**Soal 3:** Jelaskan fungsi keyword yield* pada kode tersebut!
+Apa maksud isi perintah kode tersebut?
 ```
+Stream<Color> getColors() async* {
+    yield* Stream.periodic(const Duration(seconds: 1), (int t) {
+      int index = t % colors.length;
+      return colors[index];
+    });
+  }
 
-### Soal 12
-- Jika Anda tidak melihat animasi loading tampil, kemungkinan itu berjalan sangat cepat. Tambahkan delay pada method getPosition() dengan kode await Future.delayed(const Duration(seconds: 3));
+```
+Kode tersebut menggunakan keyword yield* dalam Dart untuk membuat sebuah stream yang menghasilkan nilai berulang setiap detik. Fungsi generator menggunakan Stream.periodic untuk menciptakan stream dengan interval waktu satu detik, dan setiap kali dipanggil, mengembalikan nilai dari array colors berdasarkan indeks yang dihitung dengan memanfaatkan waktu atau iterasi stream. Dengan demikian, stream tersebut secara berurutan mengeluarkan warna-warna dari array colors setiap detiknya.
 
-Jawab : 
-```dart
-Future<Position> getPosition() async {
-    await Geolocator.requestPermission();
-    await Geolocator.isLocationServiceEnabled();
-    await Future.delayed(const Duration(seconds: 3));
-    Position? position = await Geolocator.getCurrentPosition();
-    return position;
+**Soal 4:** Capture hasil praktikum Anda berupa GIF
+
+<img src = "img/praktikum1.gif">
+
+**Soal 5:** Jelaskan perbedaan menggunakan listen dan await for (langkah 9) !
+
+
+Perbedaan antara menggunakan await for dan listen terletak pada sifat blocking dan non-blocking dari keduanya dalam penanganan stream dalam Dart. Penggunaan await for membuat eksekusi metodenya bersifat blocking, di mana kode akan menunggu hingga nilai berikutnya tersedia dalam stream sebelum melanjutkan, sementara listen bersifat non-blocking, memungkinkan eksekusi kode untuk terus berjalan tanpa menunggu nilai stream, dan setiap nilai baru yang tersedia akan memicu pemanggilan fungsi yang diberikan sebagai argumen.
+
+## **Praktikum 2: Streams Controllers dan Sinks**
+
+**Soal 6:** Jelaskan maksud kode langkah 8 dan 10 tersebut!
+```
+  @override
+  void initState(){
+    numberStream = NumberStream();
+    numberStreamController = numberStream.controller;
+    Stream stream = numberStreamController.stream;
+    stream.listen((event){
+      setState((){
+        lastNumber = event;
+      });
+    });
+    super.initState();
+  }
+
+  void addRandomNumber(){
+    Random random = Random();
+    int myNum = random.nextInt(10);
+    numberStream.addNumbertoSink(myNum);
   }
 ```
-- Apakah Anda mendapatkan koordinat GPS ketika run di browser? Mengapa demikian?
+Dalam langkah awal pembuatan widget, dibuat objek NumberStream dan StreamController, serta ditambahkan pendengar (listener) pada aliran data dari StreamController. Ketika nilai dalam aliran data mengalami perubahan, fungsi setState dipanggil untuk mengupdate nilai lastNumber, yang nantinya akan mengakibatkan perubahan pada tampilan. Fungsi addRandomNumber membuat angka acak dan menyuntikkannya ke dalam aliran data melalui numberStream.addNumbertoSink(myNum).
 
-Jawab :
->Karena package geolocator juga support di browser, sehingga koordinat GPS juga bisa didapatkan pada browser, beserta izinnya.
+<img src = "img/praktikum2.gif">
 
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 12".
+**Soal 7:** Jelaskan maksud kode langkah 13 sampai 15 
 
-<img src="image/W12 S12.gif" width = 197>
+<img src = "img/praktikum2_2.gif">
 
-### Soal 13
-- Apakah ada perbedaan UI dengan praktikum sebelumnya? Mengapa demikian?
+Langkah 13 menambahkan fungsi addError ke dalam file "stream.dart", yang memungkinkan penambahan error ke dalam sink dari StreamController. Langkah 14 memperluas implementasi pendengar aliran data di file "main.dart" dengan menambahkan fungsi onError. Jika terjadi error dalam aliran data, nilai lastNumber akan diperbarui menjadi -1. Langkah 15 mengubah implementasi fungsi addRandomNumber di file "main.dart" dengan menonaktifkan pembuatan angka acak dan menggantinya dengan pemanggilan fungsi addError. Hal ini memberikan kemampuan untuk mensimulasikan dan menangani situasi error dalam aliran data dengan mengubah nilai lastNumber menjadi -1.
 
-Jawab : 
->Kedua praktikum menampilkan koordinat Geolokasi dengan layout yang sama. Hal ini terjadi karena keduanya mengambil lokasi pengguna secara langsung saat aplikasi dimulai.
+## **Praktikum 3: Injeksi Data ke Streams**
 
->Untuk pembaruan UI, pada kasus pertama, setState digunakan untuk memperbarui variabel state myPosition. Pada kasus kedua, FutureBuilder digunakan untuk mengelola pembaruan UI secara otomatis. Namun pada akhirnya, hasil tampilan UI terlihat sama karena keduanya memiliki penundaan yang sama, yakni 3 detik.
+**Soal 8:** Jelaskan maksud kode langkah 1-3 tersebut!
 
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 13".
+Langkah 1 menambahkan variabel transformer ke dalam kelas _StreamHomePageState di file "main.dart". Langkah 2 menciptakan sebuah StreamTransformer dalam metode initState, yang mengatur transformasi data dalam aliran, mengalikan nilai input dengan 10, dan menangani error dengan mengirim nilai -1 ke dalam aliran. Pada langkah 3, metode transform diterapkan pada objek stream, memproses aliran data sesuai dengan transformasi yang telah ditentukan oleh transformer. Hasilnya diteruskan ke listener aliran data, di mana nilai tersebut digunakan untuk memperbarui lastNumber dalam setState.  
 
-<img src="image/W12 S14.gif" width = 197>
+<img src = "img/praktikum3.gif">
 
-- Seperti yang Anda lihat, menggunakan FutureBuilder lebih efisien, clean, dan reactive dengan Future bersama UI.
+## **Praktikum 4: Subscribe ke Strean Events**
 
-
-### Soal 14
-- Apakah ada perbedaan UI dengan langkah sebelumnya? Mengapa demikian?
-
-Jawab : 
-> Langkah ini tidak mengubah tampilan UI. Hal ini karena langkah ini hanya menambahkan fungsi handleError() yang akan dijalankan jika terjadi kesalahan. Namun, pada langkah ini tidak ada kesalahan yang terjadi selama pemrosesan data lokasi. Oleh karena itu, pesan kesalahan "Something terrible happened!" tidak akan ditampilkan.
-
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 14".
-
-Jawab : 
-
-<img src="image/W12 S14.gif" width = 197>
-
-### Soal 15
-- Tambahkan nama panggilan Anda pada tiap properti title sebagai identitas pekerjaan Anda.
-
-```dart
-appBar: AppBar(
-        title: const Text('Navigation First Screen Rezky'),
-      ),
-```
-
-- Silakan ganti dengan warna tema favorit Anda.
-
-### Soal 16
-- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
-
-Jawab : 
->Ketika tombol ditekan, warnanya akan berubah sesuai dengan warna yang telah ditetapkan pada widget ElevatedButton() di class navigation_second.dart. Hal ini dikarenakan setiap tombol memiliki fungsi Navigation.pop() yang memiliki parameter berupa context dan warna yang telah ditetapkan. Oleh karena itu, setiap tombol yang ditekan akan menampilkan warna yang berbeda-beda sesuai dengan nilai variabel warna.
-
-- Gantilah 3 warna pada langkah 5 dengan warna favorit Anda!
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 16".
-
-<img src="image/W12 S16.gif" width = 197>
+**Soal 9:** Jelaskan maksud kode langkah 2, 6 dan 8 tersebut!
 
 
-### Soal 17
-- Cobalah klik setiap button, apa yang terjadi ? Mengapa demikian ?
+Langkah 2 memodifikasi metode initState dalam Flutter. Setelah mendapatkan aliran data dari numberStreamController, sebuah subscription dibuat untuk mendengarkan perubahan pada aliran tersebut. Jika terjadi perubahan, nilai lastNumber diperbarui, sedangkan jika terjadi error, nilai lastNumber diatur menjadi -1. Pada langkah ini juga, pesan 'OnDone was called' akan dicetak ketika aliran data selesai. Langkah 6, yang umumnya terdapat dalam metode dispose, menggunakan subscription.cancel() untuk memastikan bahwa langganan pada aliran data dihentikan ketika widget tidak lagi digunakan. Langkah 8 mengubah metode addRandomNumber, menambahkan pemeriksaan untuk memastikan bahwa angka acak hanya ditambahkan ke aliran data jika numberStreamController belum ditutup. Jika sudah ditutup, nilai lastNumber diatur menjadi -1. 
 
-Jawab : 
-> Ketika Anda menekan tombol "Change Color" dan memilih warna pada dialog, layar akan mengalami perubahan pada warna latar belakang. Ini disebabkan oleh pembaruan nilai warna dalam fungsi _showColorDialog, diikuti dengan pembaruan widget menggunakan setState. Tindakan ini akan memicu pembangunan ulang widget dan mencerminkan perubahan warna yang telah dipilih pada layar.
+<img src = "img/praktikum4.gif">
 
-- Gantilah 3 warna pada langkah 3 dengan warna favorit Anda!
-- Capture hasil praktikum Anda berupa GIF dan lampirkan di README. Lalu lakukan commit dengan pesan "W12: Soal 17".
+<img src = "img/image.png">
 
-<img src="image/W12 S17.gif" width = 197>
+## **Praktikum 5: Multiple Stream Subscriptions**
 
+<img src = "img/image-1.png">
+
+**Soal 10:** Jelaskan mengapa error itu bisa terjadi ?
+
+Error "Bad state: Stream has already been listened to" terjadi karena pada Langkah 2, dua objek StreamSubscription (subscription dan subscription2) mencoba untuk mendengarkan aliran data (stream) yang sama. suatu aliran data hanya dapat didengarkan sekali pada satu waktu.
+
+**Soal 11:** Jelaskan mengapa hal itu bisa terjadi ?
+
+Pada langkah 4, stream data diubah menjadi jenis broadcast dengan menambahkan .asBroadcastStream(). Ini memungkinkan lebih dari satu StreamSubscription mendengarkan aliran data. Kemudian, pada langkah 2, dua StreamSubscription (subscription dan subscription2) dibuat untuk mendengarkan aliran data yang sama. Saat tombol 'New Random Number' ditekan, nilai acak ditambahkan ke dalam aliran data, dan karena aliran data adalah tipe broadcast, kedua StreamSubscription menerima nilai tersebut, menyebabkan teks angka pada tampilan bertambah dua kali
+
+<img src = "img/praktikum5.gif">
+
+
+## **Praktikum 6: StreamBuilder**
+
+**Soal 12:**
+
+ada Langkah 3, kode di file "stream.dart" mendefinisikan kelas NumberStream yang memiliki metode getNumbers(). MPetode ini menggunakan Stream.periodic untuk membuat aliran data yang menghasilkan nilai acak setiap detik. Pada Langkah 7, dalam file "main.dart," menggunakan StreamBuilder untuk membangun antarmuka pengguna yang merespons perubahan pada aliran data numberStream. Jika terjadi error, dicetak pesan 'Error!'. Jika ada data pada snapshot, teks dengan nilai data tersebut ditampilkan di tengah layar dengan ukuran font 96. Jika tidak ada data, widget tetap mempertahankan tata letak tanpa konten yang terlihat. 
+
+<img src = "img/praktikum6.gif">
+
+## **Praktikum 7: BLoC Pattern**
+
+**Soal 13:** Jelaskan maksud praktikum ini ! Dimanakah letak konsep pola BLoC-nya ? 
+
+Praktikum ini memperkenalkan konsep BLoC (Business Logic Component) pada Flutter dengan menerapkan pola arsitektur BLoC. Konsep BLoC terletak pada kelas RandomNUmberBloc yang bertindak sebagai komponen logika bisnis. Dalam implementasinya, dua StreamController digunakan untuk mengelola input dan output, yaitu _generateRandomController sebagai sink untuk menerima input dan _randomNumberController sebagai stream untuk mengirimkan output. Ketika tombol ditekan, generateRandom menerima input, dan melalui proses logika bisnis (pembuatan angka acak), hasilnya dikirimkan ke randomNumber untuk kemudian diteruskan ke antarmuka pengguna menggunakan StreamBuilder.
+
+<img src = "img/praktikum7.gif">
